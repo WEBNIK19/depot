@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 #
+LineItem.delete_all
 Product.delete_all
 # 
 Product.create(title: 'Seven Mobile Apps in Seven Weeks', description: %{
@@ -19,3 +20,17 @@ Product.create(title: 'Seven Mobile Apps in Seven Weeks', description: %{
 	</p>
 }, image_url: '7apps.jpg',
 price: 26.00)
+# 
+Product.create(title: 'Rails, Angular, Postgres and Bootstrap', description: %{
+	<p>
+	<em>Powerful, Effective, and Efficient Full-Stack Web Development</em>
+	As a Rails developer, you care about experience and perfomance,
+	but you also want simple and maintainable code. Achive all that by embracing
+	the full-stack development, from styling with Bootstrap, building an interactive
+	user interface with AngularJS, to storing data quickly and reliably in PostgreSQL.
+	Take a holistic view of full-stack development to create usable, high-performing
+	applications, and learn to use these technologies effectively in a Ruby on Rails 
+	environment.
+	</p>
+}, image_url: 'dcbang.jpg',
+price: 45.00)
