@@ -1,9 +1,4 @@
 <p id="notice"><%= notice %></p>
-<h2>Your Pragmatic Cart</h2>
-<ul id="line_items">
-	<% @cart.line_items.each do |item| %>
-		<li><%= item.product.title %> <%= number_to_currency(item.product.price) %></li>
-	<% end %>
-</ul>
+<%= render(@cart) %>
 <%= link_to 'Edit', edit_cart_path(@cart) %> 
 <%= link_to 'Back', store_index_path %>

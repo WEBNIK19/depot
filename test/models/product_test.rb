@@ -55,4 +55,5 @@ class ProductTest < ActiveSupport::TestCase
 		assert product.invalid?
 		assert_equal [I18n.translate('errors.messages.taken')], product.errors[:title]
 	end
+
 end
