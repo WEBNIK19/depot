@@ -1,8 +1,7 @@
 class LineItemsController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:create]
+  before_action :set_cart, only: [:create, :update, :destroy]
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
-
   # GET /line_items
   # GET /line_items.json
   def index
@@ -45,8 +44,9 @@ class LineItemsController < ApplicationController
   # PATCH/PUT /line_items/1.json
   def update
     respond_to do |format|
-      if @line_item.update(line_item_params)
-        format.html { redirect_to @line_item, notice: 'Line item was successfully updated.' }
+      if @line_item.decrement
+        format.html { redirect_to store_index_url }
+        format.js { @current_item = @line_item }
         format.json { render :show, status: :ok, location: @line_item }
       else
         format.html { render :edit }
@@ -58,9 +58,10 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.json
   def destroy
-    @line_item.destroy if @line_item.cart_id = session[:cart_id]
+    @line_item.destroy if @cart.id = session[:cart_id]
       respond_to do |format|
         format.html { redirect_to store_index_url, notice: 'Line item was successfully destroyed.' }
+        format.js
         format.json { head :no_content }
       end 
   end

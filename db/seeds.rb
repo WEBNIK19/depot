@@ -34,3 +34,15 @@ Product.create(title: 'Rails, Angular, Postgres and Bootstrap', description: %{
 	</p>
 }, image_url: 'dcbang.jpg',
 price: 45.00)
+
+Product.create(title: 'Genetic Algorithms and Machine Learning for Programmers', description: %{
+	<p>
+	Self-driving cars, natural language recognition, and online recommendation engines
+	 are all possible thanks to Machine Learning. Now you can create your own genetic 
+	 algorithms, nature-inspired swarms, Monte Carlo simulations, cellular automata, and 
+	 clusters. Learn how to test your ML code and dive into even more advanced topics. 
+	 If you are a beginner-to-intermediate programmer keen to understand machine learning,
+	  this book is for you.
+	</p>
+}, image_url: 'genalg.jpg',
+price: 24.00)
